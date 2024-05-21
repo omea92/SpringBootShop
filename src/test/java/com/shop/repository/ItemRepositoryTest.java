@@ -12,15 +12,15 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
-@TestPropertySource(locations = "classpath:application-test.properties")
+@SpringBootTest //스프링 부트에서 제공
+@TestPropertySource(locations = "classpath:application-test.properties") //경로를 설정
 class ItemRepositoryTest {
 
-    @Autowired
+    @Autowired //빈 주입
     ItemRepository itemRepository;
 
-    @Test
-    @DisplayName("상품 저장 테스트")
+    @Test //테스트 대상 지정
+    @DisplayName("상품 저장 테스트") //테스트 명 지정
     public void createItemTest() {
         Item item = new Item();
         item.setItemNm("테스트 상품");
